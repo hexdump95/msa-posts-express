@@ -6,9 +6,14 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    container: sonarsource/sonar-scanner-cli:4.6
     steps:
       - uses: actions/checkout@v2
+
+      - run: sudo apt-get update -y && sudo apt-get upgrade -y
+      - run: sudo apt-get install curl unzip -y          
+      - run: curl -OL https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.6.2.2472-linux.zip
+      - run: unzip ./sonar-scanner-cli-4.6.2.2472-linux.zip
+      - run: echo "$(pwd)/sonar-scanner-4.6.2.2472-linux/bin" >> $GITHUB_PATH
 
       - uses: actions/setup-node@v1
         with:

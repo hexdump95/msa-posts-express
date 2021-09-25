@@ -4,6 +4,7 @@
     "outDir": "dist/",
     "module": "commonjs",
     "strict": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "noUnusedParameters": true
   }
 }

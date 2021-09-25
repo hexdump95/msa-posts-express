@@ -1,4 +1,7 @@
 .scannerwork/
-node_modules/
+coverage/
 dist/
+node_modules/
 .env
+junit.xml
+test-report.xml
